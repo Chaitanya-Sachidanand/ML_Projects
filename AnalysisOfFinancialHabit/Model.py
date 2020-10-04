@@ -10,7 +10,7 @@ Created on Sun Aug 26 23:04:09 2020
 import pandas as pd
 import numpy as np
 import random
-import seaborn as sn
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 dataset = pd.read_csv('new_churn_data.csv')
@@ -88,8 +88,8 @@ f1_score(y_test, y_pred)
 
 df_cm = pd.DataFrame(cm, index = (0, 1), columns = (0, 1))
 plt.figure(figsize = (10,7))
-sn.set(font_scale=1.4)
-sn.heatmap(df_cm, annot=True, fmt='g')
+sns.set(font_scale=1.4)
+sns.heatmap(df_cm, annot=True, fmt='g')
 print("Test Data Accuracy: %0.4f" % accuracy_score(y_test, y_pred))
 
 # Applying k-Fold Cross Validation
@@ -122,7 +122,7 @@ print(rfe.ranking_)
 X_train.columns[rfe.support_]
 
 # New Correlation Matrix
-sn.set(style="white")
+sns.set(style="white")
 
 # Compute the correlation matrix
 corr = X_train[X_train.columns[rfe.support_]].corr()
@@ -135,10 +135,10 @@ mask[np.triu_indices_from(mask)] = True
 f, ax = plt.subplots(figsize=(18, 15))
 
 # Generate a custom diverging colormap
-cmap = sn.diverging_palette(220, 10, as_cmap=True)
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
 
 # Draw the heatmap with the mask and correct aspect ratio
-sn.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
+sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
             square=True, linewidths=.5, cbar_kws={"shrink": .5})    
 
 
@@ -160,8 +160,8 @@ f1_score(y_test, y_pred)
 
 df_cm = pd.DataFrame(cm, index = (1, 0), columns = (1, 0))
 plt.figure(figsize = (10,7))
-sn.set(font_scale=1.4)
-sn.heatmap(df_cm, annot=True, fmt='g')
+sns.set(font_scale=1.4)
+sns.heatmap(df_cm, annot=True, fmt='g')
 print("Test Data Accuracy: %0.4f" % accuracy_score(y_test, y_pred))
 
 # Applying k-Fold Cross Validation
