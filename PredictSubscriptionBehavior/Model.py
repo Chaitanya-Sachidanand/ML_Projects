@@ -9,7 +9,7 @@ Created on Tue May 19  19:15:48 2020
 
 import pandas as pd
 import numpy as np
-import seaborn as sn
+import seaborn as sns
 import matplotlib.pyplot as plt
 import time
 
@@ -91,8 +91,8 @@ f1_score(y_test, y_pred)
 
 df_cm = pd.DataFrame(cm, index = (0, 1), columns = (0, 1))
 plt.figure(figsize = (10,7))
-sn.set(font_scale=1.4)
-sn.heatmap(df_cm, annot=True, fmt='g')
+sns.set(font_scale=1.4)
+sns.heatmap(df_cm, annot=True, fmt='g')
 print("Test Data Accuracy: %0.4f" % accuracy_score(y_test, y_pred))
 
 
