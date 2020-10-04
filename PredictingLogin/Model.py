@@ -8,7 +8,7 @@ Created on Thu May 28 18:41:44 2020
 import pandas as pd
 #import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sn
+import seaborn as sns
 import random
 import time
 
@@ -274,8 +274,8 @@ results = results.append(model_results, ignore_index = True)
 cm = confusion_matrix(y_test, y_pred) # rows = truth, cols = prediction
 df_cm = pd.DataFrame(cm, index = (0, 1), columns = (0, 1))
 plt.figure(figsize = (10,7))
-sn.set(font_scale=1.4)
-sn.heatmap(df_cm, annot=True, fmt='g')
+sns.set(font_scale=1.4)
+sns.heatmap(df_cm, annot=True, fmt='g')
 print("Test Data Accuracy: %0.4f" % accuracy_score(y_test, y_pred))
 
 
