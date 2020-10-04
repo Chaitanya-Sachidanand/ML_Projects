@@ -6,7 +6,7 @@ Created on Thu May 28 18:41:44 2020
 """
 
 import pandas as pd
-#import numpy as np
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import random
