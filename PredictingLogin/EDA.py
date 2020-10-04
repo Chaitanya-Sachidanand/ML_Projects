@@ -10,7 +10,7 @@ Created on Sun May 31 16:41:28 2020
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sn
+import seaborn as sns
 
 dataset = pd.read_csv('financial_data.csv')
 
@@ -55,7 +55,7 @@ dataset2.corrwith(dataset.e_signed).plot.bar(
 
 
 ## Correlation Matrix
-sn.set(style="white")
+sns.set(style="white")
 
 # Compute the correlation matrix
 corr = dataset2.corr()
@@ -68,9 +68,9 @@ mask[np.triu_indices_from(mask)] = True
 f, ax = plt.subplots(figsize=(18, 15))
 
 # Generate a custom diverging colormap
-cmap = sn.diverging_palette(220, 10, as_cmap=True)
+cmap = sns.diverging_palette(220, 10, as_cmap=True)
 
 # Draw the heatmap with the mask and correct aspect ratio
-sn.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
+sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.3, center=0,
             square=True, linewidths=.5, cbar_kws={"shrink": .5})
 
